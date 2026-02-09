@@ -121,7 +121,8 @@ def ensure_cols(summary: pd.DataFrame) -> pd.DataFrame:
 
 st.title("Transportes TLOG — Summary (MVP)")
 
-df = load_data(DATA_PATH.stat().st_mtime)
+mtime = DATA_PATH.stat().st_mtime if DATA_PATH.exists() else 0.0
+df = load_data(mtime)
 
 # --------- Región options  ----------
 preferred_order = ["Total logística", "Norte", "Centro", "Sur"]
