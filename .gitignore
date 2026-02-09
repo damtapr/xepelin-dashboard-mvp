@@ -1,0 +1,20 @@
+# Python / venv
+.venv/
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Outputs generados
+data/
+*.parquet
+
+# Input generado por la app/pipeline
+input/raw_dummy.csv
+
+# (Opcional) si generas otros csvs temporales en input/
+# input/*.csv
+
+# OS
+.DS_Store
