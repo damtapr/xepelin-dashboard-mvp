@@ -96,7 +96,8 @@ def metric_delta(df_slice: pd.DataFrame, metric: str) -> float:
 
 
 st.title("Transportes TLOG — Bridge / Cascada (MVP)")
-df = load_df(DATA_PATH.stat().st_mtime)
+mtime = DATA_PATH.stat().st_mtime if DATA_PATH.exists() else 0.0
+df = load_df(mtime)
 
 # --- Región options ---
 preferred_order = ["Total logística", "Norte", "Centro", "Sur"]
