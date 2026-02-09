@@ -72,8 +72,8 @@ ALLOWED_YEARS = [2025, 2026]
 @st.cache_data
 def load_data(_mtime: float) -> pd.DataFrame:
     if not DATA_PATH.exists():
-        st.error(f"No encuentro {DATA_PATH}.")
-        st.stop()
+         st.warning("Aún no hay datos generados. Ve a la página **Cargar base** y carga un archivo (o modo demo) para generar el parquet.")
+         st.stop()
 
     df = pd.read_parquet(DATA_PATH)
 
